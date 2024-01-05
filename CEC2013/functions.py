@@ -16,11 +16,11 @@ import csv
 
 class CEC_functions:
     def __init__(self , dim):
-        csv_file = open('.\CEC2013\M_D' + str(dim) + '.txt')
+        csv_file = open('./CEC2013/M_D' + str(dim) + '.txt')
         csv_data = csv.reader(csv_file, delimiter=' ')
         csv_data_not_null = [[float(data) for data in row if len(data) > 0] for row in csv_data]
         self.rotate_data = np.array(csv_data_not_null)
-        csv_file = open('.\CEC2013\shift_data.txt')
+        csv_file = open('./CEC2013/shift_data.txt')
         csv_data = csv.reader(csv_file, delimiter=' ')
         self.sd = []
         for row in csv_data:
